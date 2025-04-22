@@ -1,6 +1,6 @@
-import './styles/index.css'
+import { Header, Profile, Post } from './components'
 
-import { Header } from './components'
+import './styles/app.css'
 
 function App() {
   return (
@@ -9,6 +9,10 @@ function App() {
 
       <main>
         <Profile />
+
+        <article>
+          <Post />
+        </article>
       </main>
     </>
   )
