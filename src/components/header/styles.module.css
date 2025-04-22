@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: var(--neutral-700);
+}
+
+.header__logo-link {
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header__logo-img {
+  width: 2rem;
+}
