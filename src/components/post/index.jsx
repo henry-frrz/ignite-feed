@@ -44,6 +44,21 @@ export const Post = () => {
           #novoprojeto #nlw #rocketseat
         </a>
       </div>
+
+      <form className={styles['post__comment-form']}>
+        <strong className={styles['comment-form__title']}>
+          Deixe seu feedback
+        </strong>
+
+        <textarea
+          className={styles['comment-form__textarea']}
+          placeholder='Escreva um comentário...'
+        />
+
+        <button className={styles['comment-form__submit-btn']} type='submit'>
+          Publicar
+        </button>
+      </form>
     </section>
   )
 }
