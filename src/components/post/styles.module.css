@@ -21,14 +21,6 @@
   align-items: center;
 }
 
-.post__author-avatar {
-  width: 3.75rem;
-  height: 3.75rem;
-  border: 4px solid var(--neutral-700);
-  outline: 2px solid var(--green-100);
-  border-radius: 0.5rem;
-}
-
 .post__author-name {
   color: var(--gray-100);
   line-height: 160%;

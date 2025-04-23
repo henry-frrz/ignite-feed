@@ -1,6 +1,7 @@
 import * as Icon from '@phosphor-icons/react'
 
 import styles from './styles.module.css'
+import { Avatar } from '../index'
 
 export const Profile = () => {
   return (
@@ -12,11 +13,7 @@ export const Profile = () => {
       />
 
       <a className={styles.profile__info}>
-        <img
-          className={styles['profile__info-avatar']}
-          src='https://github.com/henry-frrz.png'
-          alt='Avatar'
-        />
+        <Avatar src='https://github.com/henry-frrz.png' />
 
         <strong className={styles['profile__info-name']}>
           Henrique Ferraz

@@ -1,4 +1,4 @@
-import { Comment } from '../index'
+import { Avatar, Comment } from '../index'
 
 import styles from './styles.module.css'
 
@@ -7,11 +7,7 @@ export const Post = () => {
     <section id={styles.post}>
       <header className={styles.post__header}>
         <a className={styles.post__author}>
-          <img
-            className={styles['post__author-avatar']}
-            src='https://github.com/henry-frrz.png'
-            alt='Avatar'
-          />
+          <Avatar src='https://github.com/henry-frrz.png' />
 
           <div className={styles['post__author-info']}>
             <strong className={styles['post__author-name']}>

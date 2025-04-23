@@ -4,12 +4,6 @@
   min-width: 100%;
 }
 
-.comment__author-avatar {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.5rem;
-}
-
 .comment__author-avatar-link {
   align-self: flex-start;
 }

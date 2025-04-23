@@ -1,16 +1,13 @@
 import * as Icon from '@phosphor-icons/react'
 
 import styles from './styles.module.css'
+import { Avatar } from '../../index'
 
 export const Comment = () => {
   return (
     <li id={styles.comment}>
       <a className={styles['comment__author-avatar-link']} href=''>
-        <img
-          className={styles['comment__author-avatar']}
-          src='https://github.com/henry-frrz.png'
-          alt='Avatar'
-        />
+        <Avatar border={false} src='https://github.com/henry-frrz.png' />
       </a>
 
       <div className={styles['comment__wrapper']}>
