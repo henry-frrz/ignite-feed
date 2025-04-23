@@ -1,0 +1,78 @@
+#comment {
+  display: flex;
+  gap: 1rem;
+  min-width: 100%;
+}
+
+.comment__author-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+
+.comment__author-avatar-link {
+  align-self: flex-start;
+}
+
+.comment__wrapper {
+  width: 100%;
+}
+
+.comment__content {
+  padding: 1rem;
+  background-color: var(--neutral-600);
+  border-radius: 0.5rem;
+}
+
+.comment__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.comment__remove-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.comment__remove-btn:hover {
+  fill: #f75a68;
+}
+
+.comment__info {
+  display: grid;
+}
+
+.comment__time {
+  font-size: 0.875rem;
+  color: var(--neutral-400);
+  line-height: 160%;
+}
+
+.comment__like {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.comment__like:hover span,
+.comment__like:hover svg {
+  color: var(--green-200);
+  fill: var(--green-200);
+}
+
+.comment__like svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: all 0.1s;
+}
+
+.comment__like span {
+  font-size: 0.875rem;
+  margin-bottom: -1px;
+  transition: all 0.1s;
+}

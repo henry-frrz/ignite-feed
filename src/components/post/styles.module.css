@@ -102,3 +102,9 @@
 .comment-form__submit-btn:hover {
   background-color: var(--green-100);
 }
+
+.post__comments {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}

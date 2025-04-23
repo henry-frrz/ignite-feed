@@ -1,3 +1,5 @@
+import { Comment } from '../index'
+
 import styles from './styles.module.css'
 
 export const Post = () => {
@@ -35,7 +37,7 @@ export const Post = () => {
           Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
           no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
         </p>
-        
+
         <a className={styles.post__link} href=''>
           👉 jane.design/doctorcare
         </a>
@@ -59,6 +61,10 @@ export const Post = () => {
           Publicar
         </button>
       </form>
+
+      <ul className={styles['post__comments']}>
+        <Comment />
+      </ul>
     </section>
   )
 }
