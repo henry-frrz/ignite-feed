@@ -44,7 +44,13 @@ function App() {
 
         <article>
           {posts.map(post => {
-            return <Post />
+            return (
+              <Post
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
           })}
         </article>
       </main>
