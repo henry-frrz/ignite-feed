@@ -5,3 +5,14 @@ main {
   margin: 2rem auto;
   grid-template-columns: 16rem 1fr;
 }
+
+article {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
