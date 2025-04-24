@@ -3,7 +3,7 @@ import * as Icon from '@phosphor-icons/react'
 import styles from './styles.module.css'
 import { Avatar } from '../../index'
 
-export const Comment = () => {
+export const Comment = ({ content }) => {
   return (
     <li id={styles.comment}>
       <a className={styles['comment__author-avatar-link']} href=''>
@@ -30,7 +30,7 @@ export const Comment = () => {
             <Icon.Trash className={styles['comment__remove-btn']} />
           </header>
 
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>{content}</p>
         </div>
 
         <button className={styles['comment__like']}>

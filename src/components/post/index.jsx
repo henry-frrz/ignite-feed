@@ -3,8 +3,10 @@ import { format, formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import styles from './styles.module.css'
+import { useState } from 'react'
 
 export const Post = ({ author, content, publishedAt }) => {
+  const [comments, setComments] = useState(['Post muito bacana!!'])
   const publishedDateFormatted = format(
     publishedAt,
     "dd 'de' MMMM 'às' HH:mm'h'",
@@ -61,7 +63,14 @@ export const Post = ({ author, content, publishedAt }) => {
       </form>
 
       <ul className={styles['post__comments']}>
-        <Comment />
+        {comments.map(comment => {
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+            />
+          )
+        })}
       </ul>
     </section>
   )
