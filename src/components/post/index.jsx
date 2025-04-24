@@ -7,6 +7,8 @@ import { useState } from 'react'
 
 export const Post = ({ author, content, publishedAt }) => {
   const [comments, setComments] = useState(['Post muito bacana!!'])
+  const [newCommentText, setNewCommentText] = useState('')
+
   const publishedDateFormatted = format(
     publishedAt,
     "dd 'de' MMMM 'às' HH:mm'h'",
@@ -19,6 +21,26 @@ export const Post = ({ author, content, publishedAt }) => {
     locale: ptBR,
     addSuffix: true,
   })
+
+  const handleNewCommentChange = () => {
+    setNewCommentText(event.target.value)
+  }
+
+  const handleCreateNewComment = () => {
+    event.preventDefault()
+
+    setComments([...comments, newCommentText])
+
+    setNewCommentText('')
+  }
+
+  const deleteComment = commentToDelete => {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete
+    })
+
+    setComments(commentsWithoutDeletedOne)
+  }
 
   return (
     <section id={styles.post}>
@@ -47,12 +69,17 @@ export const Post = ({ author, content, publishedAt }) => {
         {content}
       </p>
 
-      <form className={styles['post__comment-form']}>
+      <form
+        className={styles['post__comment-form']}
+        onSubmit={handleCreateNewComment}
+      >
         <strong className={styles['comment-form__title']}>
           Deixe seu feedback
         </strong>
 
         <textarea
+          onChange={handleNewCommentChange}
+          value={newCommentText}
           className={styles['comment-form__textarea']}
           placeholder='Escreva um comentário...'
         />
@@ -68,6 +95,7 @@ export const Post = ({ author, content, publishedAt }) => {
             <Comment
               key={comment}
               content={comment}
+              onDeleteComment={deleteComment}
             />
           )
         })}

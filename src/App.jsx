@@ -19,7 +19,7 @@ const posts = [
   },
 
   {
-    id: 1,
+    id: 2,
     author: {
       avatarURL: 'https://github.com/henry-frrz.png',
       name: 'Henrique Ferraz',
@@ -46,6 +46,7 @@ function App() {
           {posts.map(post => {
             return (
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}

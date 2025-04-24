@@ -3,7 +3,11 @@ import * as Icon from '@phosphor-icons/react'
 import styles from './styles.module.css'
 import { Avatar } from '../../index'
 
-export const Comment = ({ content }) => {
+export const Comment = ({ content, onDeleteComment }) => {
+  const handleDeleteComment = () => {
+    onDeleteComment(content)
+  }
+
   return (
     <li id={styles.comment}>
       <a className={styles['comment__author-avatar-link']} href=''>
@@ -27,7 +31,10 @@ export const Comment = ({ content }) => {
               </time>
             </a>
 
-            <Icon.Trash className={styles['comment__remove-btn']} />
+            <Icon.Trash
+              className={styles['comment__remove-btn']}
+              onClick={handleDeleteComment}
+            />
           </header>
 
           <p>{content}</p>
