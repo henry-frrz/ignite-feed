@@ -23,6 +23,8 @@ export const Post = ({ author, content, publishedAt }) => {
   })
 
   const handleNewCommentChange = () => {
+    event.target.setCustomValidity('')
+
     setNewCommentText(event.target.value)
   }
 
@@ -34,6 +36,10 @@ export const Post = ({ author, content, publishedAt }) => {
     setNewCommentText('')
   }
 
+  const handleNewCommentInvalid = () => {
+    event.target.setCustomValidity('Esse campo é obrigatório')
+  }
+
   const deleteComment = commentToDelete => {
     const commentsWithoutDeletedOne = comments.filter(comment => {
       return comment !== commentToDelete
@@ -41,6 +47,8 @@ export const Post = ({ author, content, publishedAt }) => {
 
     setComments(commentsWithoutDeletedOne)
   }
+
+  const isNewCommentEmpty = newCommentText.length === 0
 
   return (
     <section id={styles.post}>
@@ -82,9 +90,15 @@ export const Post = ({ author, content, publishedAt }) => {
           value={newCommentText}
           className={styles['comment-form__textarea']}
           placeholder='Escreva um comentário...'
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
-        <button className={styles['comment-form__submit-btn']} type='submit'>
+        <button
+          className={styles['comment-form__submit-btn']}
+          type='submit'
+          disabled={isNewCommentEmpty}
+        >
           Publicar
         </button>
       </form>
