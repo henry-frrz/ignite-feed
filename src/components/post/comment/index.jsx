@@ -2,10 +2,16 @@ import * as Icon from '@phosphor-icons/react'
 
 import styles from './styles.module.css'
 import { Avatar } from '../../index'
+import { useState } from 'react'
 
 export const Comment = ({ content, onDeleteComment }) => {
   const handleDeleteComment = () => {
     onDeleteComment(content)
+  }
+  const [likeCount, setLikeCount] = useState(0)
+
+  const handleAddLike = () => {
+    setLikeCount(state => state + 1)
   }
 
   return (
@@ -40,8 +46,8 @@ export const Comment = ({ content, onDeleteComment }) => {
           <p>{content}</p>
         </div>
 
-        <button className={styles['comment__like']}>
-          <Icon.ThumbsUp /> <span>03</span>
+        <button className={styles['comment__like']} onClick={handleAddLike}>
+          <Icon.ThumbsUp /> <span>{likeCount}</span>
         </button>
       </div>
     </li>
